@@ -6,6 +6,6 @@ export const Hackers = new Mongo.Collection('hackers');
 
 if(Meteor.isServer){
   Meteor.publish('hackers', function hackersPublication() {
-    return Hackers.find({});
+    return Hackers.find({allegiance:"White Hat"});
   });
 }
