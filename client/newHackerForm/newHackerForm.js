@@ -1,6 +1,11 @@
 
 import { Hackers } from "../../imports/api/hackers.js";
 
+Template.newHackerForm.onCreated(function bodyOnCreated() {
+  // this.state = new ReactiveDict();
+  Meteor.subscribe('hackers');
+});
+
 Template.newHackerForm.events({
   'submit #hackerForm' : function(event, template) {
 
