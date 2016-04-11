@@ -1,7 +1,6 @@
 import { Hackers } from "../../imports/api/hackers.js";
 
 Template.hackerList.onCreated(function bodyOnCreated() {
-  // this.state = new ReactiveDict();
   Meteor.subscribe('hackers');
 });
 
