@@ -1,3 +1,6 @@
+
+import { Hackers } from "../../imports/api/hackers.js";
+
 Template.newHackerForm.events({
   'submit #hackerForm' : function(event, template) {
 
@@ -15,7 +18,9 @@ Template.newHackerForm.events({
       allegiance: allegiance
     }
 
-    console.log(newHacker);
+    // console.log(newHacker);
+    Hackers.insert(newHacker);
+    alert(`Added: ${newHacker.legalName}(${newHacker.hackerName})`);
   }
 
 });
