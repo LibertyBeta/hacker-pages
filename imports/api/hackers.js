@@ -9,3 +9,9 @@ if(Meteor.isServer){
     return Hackers.find({allegiance:"White Hat"});
   });
 }
+
+Meteor.methods({
+  'hackers.insert'(object){
+      return Hackers.insert(object);
+  }
+});

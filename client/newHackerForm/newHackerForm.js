@@ -24,7 +24,14 @@ Template.newHackerForm.events({
     }
 
     // console.log(newHacker);
-    Hackers.insert(newHacker);
+    Meteor.call("hackers.insert", newHacker, function (error, result){
+      if(error)
+      {
+        console.error(error);
+      } else {
+        console.info(result);
+      }
+    });
     alert(`Added: ${newHacker.legalName}(${newHacker.hackerName})`);
   }
 
